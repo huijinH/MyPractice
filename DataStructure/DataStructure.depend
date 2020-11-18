@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1605685892 source:e:\mygithub\mypractice\datastructure\main.cpp
+	<iostream>
+	"SeqList.h"
+
+1605683472 source:e:\mygithub\mypractice\datastructure\seqlist.cpp
+	"SeqList.h"
+
+1605685938 e:\mygithub\mypractice\datastructure\seqlist.h
+	<vector>
+	<string>
+

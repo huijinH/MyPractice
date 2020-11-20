@@ -1,12 +1,26 @@
 # depslib dependency file v1.0
-1605685892 source:e:\mygithub\mypractice\datastructure\main.cpp
+1605885628 source:e:\mygithub\mypractice\datastructure\main.cpp
 	<iostream>
 	"SeqList.h"
+	"LinkList1.h"
+	"LinkList2.h"
 
 1605683472 source:e:\mygithub\mypractice\datastructure\seqlist.cpp
 	"SeqList.h"
 
-1605685938 e:\mygithub\mypractice\datastructure\seqlist.h
+1605883298 e:\mygithub\mypractice\datastructure\seqlist.h
 	<vector>
 	<string>
+
+1605854701 e:\mygithub\mypractice\datastructure\type.h
+
+1605885388 source:e:\mygithub\mypractice\datastructure\linklist2.cpp
+	"LinkList2.h"
+
+1605885215 e:\mygithub\mypractice\datastructure\linklist2.h
+
+1605884655 source:e:\mygithub\mypractice\datastructure\linklist1.cpp
+	"LinkList1.h"
+
+1605884541 e:\mygithub\mypractice\datastructure\linklist1.h
 

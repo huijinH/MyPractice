@@ -8,13 +8,11 @@ using namespace std;
 
 #define MAX_SIZE 255
 
-// element type
 typedef struct {
     int id;
     string name;
 } ElementType;
 
-// seqList
 typedef struct {
     ElementType datas[MAX_SIZE];
     int length;

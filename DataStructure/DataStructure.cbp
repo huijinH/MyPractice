@@ -32,6 +32,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="LinkList1.cpp" />
+		<Unit filename="LinkList1.h" />
+		<Unit filename="LinkList2.cpp" />
+		<Unit filename="LinkList2.h" />
 		<Unit filename="SeqList.cpp" />
 		<Unit filename="SeqList.h" />
 		<Unit filename="main.cpp" />

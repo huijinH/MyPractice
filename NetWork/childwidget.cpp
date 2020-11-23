@@ -35,7 +35,7 @@ void ChildWidget::downloadBtnSlot()
     emit addChildWidget();
 
     url = QUrl(urlLineEdit -> text());
-    file = new QFile(QFileInfo(url.path()).fileName() + ".download");
+    file = new QFile("downloaded/" + QFileInfo(url.path()).fileName() + ".download");
     if (!(file -> open(QIODevice::WriteOnly | QIODevice::Append)))
         return;
 
@@ -69,7 +69,7 @@ void ChildWidget::managerFinishedSlot()
 
 void ChildWidget::replayReadyRead()
 {
-    qDebug() << "replayReadyRead";
+
     QByteArray data;
     data = replay -> read(ReadSize);
     if (data.isEmpty())
@@ -80,16 +80,14 @@ void ChildWidget::replayReadyRead()
 
 void ChildWidget::replayProgressSlot(qint64 curSize, qint64 total)
 {
-    //    Q_UNUSED(total);
-    qDebug() << "replayProgressSlot" << curSize << total;
+    progressBar -> setValue(file -> size());
     if (curSize == total)
     {
-        file -> rename(QFileInfo(url.path()).fileName());
         file -> close();
+        file -> rename("downloaded/" + QFileInfo(url.path()).fileName());
         downloadBtn -> setEnabled(true);
         return;
     }
-    progressBar -> setValue(file -> size());
 }
 
 void ChildWidget::replayFinished()

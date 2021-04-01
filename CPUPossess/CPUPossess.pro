@@ -22,15 +22,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-QWT_ROOT = D:/qwt-6.1.5
+QWT_ROOT = qwt-6.1.5
 
 include( $${QWT_ROOT}/qwtfunctions.pri )
 
 INCLUDEPATH += $${QWT_ROOT}/src
 
 DEPENDPATH  += $${QWT_ROOT}/src
-
-
 
 CONFIG(debug, debug|release){
     LIBS += -L$${QWT_ROOT}/lib -lqwtd

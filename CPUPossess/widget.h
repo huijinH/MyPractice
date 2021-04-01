@@ -17,9 +17,10 @@ class Widget : public QWidget
 
 public:
     explicit Widget(QWidget *parent = 0);
-    ~Widget();
+    virtual ~Widget();
+
+protected:
     void timerEvent(QTimerEvent* e);
-    void initCPUVal();
 
 private:
     Ui::Widget *ui;

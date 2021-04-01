@@ -1,14 +1,16 @@
 #include "widget.h"
 #include "ui_widget.h"
+#include <QPainter>
 #include <QDebug>
 
 __int64 CompareFileTime(FILETIME time1, FILETIME time2)
 {
     // time from double to int
-    __int64 a = time1.dwHighDateTime << 32 | time1.dwLowDateTime;
-    __int64 b = time2.dwHighDateTime << 32 | time2.dwLowDateTime;
+    unsigned long var = 32;
+    __int64 a = time1.dwHighDateTime << var | time1.dwLowDateTime;
+    __int64 b = time2.dwHighDateTime << var | time2.dwLowDateTime;
 
-    return   (b - a);
+    return (b - a);
 }
 
 Widget::Widget(QWidget *parent) :
@@ -18,6 +20,7 @@ Widget::Widget(QWidget *parent) :
     ui -> setupUi(this);
 
     curve = new QwtPlotCurve;
+    curve->setRenderHint(QwtPlotItem::RenderAntialiased);
     curve-> setPen(Qt::red, 2);
     curve -> setSamples(time, val, 10);
 
@@ -58,13 +61,4 @@ void Widget::timerEvent(QTimerEvent *e)
     preidleTime = idleTime;
     prekernelTime = kernelTime;
     preuserTime = userTime;
-}
-
-void Widget::initCPUVal()
-{
-    res = GetSystemTimes(&idleTime, &kernelTime, &userTime);
-    preidleTime = idleTime;
-    prekernelTime = kernelTime;
-    preuserTime = userTime;
-    hEvent = CreateEvent(NULL, FALSE, FALSE, NULL);
 }
